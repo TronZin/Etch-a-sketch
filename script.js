@@ -3,13 +3,21 @@ const input = document.querySelector("input");
 const canvas = document.querySelector(".canvas");
 const colors = document.querySelectorAll(".color");
 const customColor = document.querySelector(".customColor");
+const colorGenerator = document.querySelector(".generator");
 
-setCanvasGrid(16);
+
+
+
 button.addEventListener('click',() =>{setCanvasGrid(input.value)});
+
+
+let colorInUse = "black";
 colors.forEach(color => color.addEventListener("click",selectColor));
 
+colorGenerator.addEventListener("input",(e)=>{customColor.style.backgroundColor = e.target.value});
+colorGenerator.addEventListener("change",(e) => {colorInUse = e.target.value});
 
-
+setCanvasGrid(16);
 
 function setCanvasGrid(number) {
     if (number > 100 || number < 16) number = 16;
@@ -52,9 +60,9 @@ function paintSquare(e) {
     e.target.style.backgroundColor = colorInUse;
 }
 
-let colorInUse = "black";
 
 function selectColor(e) {
     colorInUse = window.getComputedStyle(e.target).backgroundColor;
     customColor.style.backgroundColor = colorInUse;
 }
+
