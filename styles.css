@@ -1,0 +1,156 @@
+* {border: 1px solid red;}
+
+body {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   
+    margin: 0px;
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.header {
+    
+    padding: 16px;
+    display: flex;
+    background-color: #380712;
+    justify-content: space-between
+    
+}
+
+.header h1 {
+    margin: 0;
+    padding: 0;
+
+    color: #c5c5c5;
+}
+
+.header .GridSetter {
+    width: 300px;
+
+    flex: 0 1 auto;
+
+    display: flex;
+    gap: 8px;
+}
+
+.GridSetter input {
+    flex: 5; 
+
+    padding: 0 10px;
+    
+    border: 2px solid #c5c5c5;
+    border-radius: 15px;
+}
+
+.GridSetter button {
+    flex: 3;
+
+    color:#c5c5c5;
+    background-color: #6b2a38;
+
+    border: 2px solid #c5c5c5;
+    border-radius: 15px;
+}
+
+.GridSetter button:hover{
+    color:#ff9900;
+    background-color: #6b2a38;
+    border-color:#ff9900;
+}
+
+.content {
+    padding: 32px;
+    flex: 1 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 32px;
+    
+} 
+
+.canvas {
+    height: 100%;
+    aspect-ratio: 1;
+
+    border: 5px solid #462c13;
+     
+    display: grid;
+}
+
+.colours * {border: 2px solid red;}
+.colours {
+    border: 2px solid red;
+
+    aspect-ratio: 3/4;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+
+    column-gap: 1em;
+    row-gap: 1em;
+    padding: 1em;
+}
+
+
+.color {
+    border: 9px solid #222222;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border-radius: 1em;
+
+    align-self: center;
+    justify-self: center;
+}
+
+.color:hover {border-color: #696969;}
+.color:active {border-color: #bbbbbb;}
+
+.color.n1 {background-color: red;}
+.color.n2 {background-color: blue;}
+.color.n3 {background-color: yellow;}
+.color.n4 {background-color: orangered;}
+.color.n5 {background-color: aqua;}
+.color.n6 {background-color: green;}
+.color.n7 {background-color: white;}
+.color.n8 {background-color: gray;}
+.color.n9 {background-color: black;}
+
+.customColor {
+    border: 9px solid #000000;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border-radius: 1em;
+
+    align-self: center;
+    justify-self: center;
+}
+
+.generator {
+    grid-column-start: 2;
+    grid-column-end: 4;
+
+    margin: 0;
+    border: 9px solid black;
+    width: 100%;
+    height: 100%;
+
+    align-self: center;
+    justify-self: center;
+}
+
+
+
+
+
+
+
+
