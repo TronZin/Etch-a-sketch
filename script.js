@@ -55,14 +55,30 @@ function setCanvasGrid(number) {
 }
 
 function paintSquare(e) {
-    if (!e.shiftKey) return;
-
-    e.target.style.backgroundColor = colorInUse;
+         if (e.shiftKey) e.target.style.backgroundColor = colorInUse;
+    else if (e.altKey) e.target.style.backgroundColor = RainbowColor(e);
+    else if (e.ctrlKey) return;
 }
 
+function RainbowColor(e) {
+    switch (getRandomInt(7)) {
+        case 0: return "red";
+        case 1: return "orangered";
+        case 2: return "yellow";
+        case 3: return "lawngreen";
+        case 4: return "blue";
+        case 5: return "indigo";
+        case 6: return "fuchsia";
+    }
+}
 
 function selectColor(e) {
     colorInUse = window.getComputedStyle(e.target).backgroundColor;
     customColor.style.backgroundColor = colorInUse;
 }
 
+//window.addEventListener("keydown",(e)=>{console.log(e.keyCode);})
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
