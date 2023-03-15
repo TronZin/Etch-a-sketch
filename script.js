@@ -45,6 +45,7 @@ function setCanvasGrid(number) {
             square.style.alignSelf = "center";
             square.style.justifySelf = "center";
 
+            square.style.backgroundColor = "white";
             square.style.width = "100%";
             square.style.height = "100%";
             
@@ -56,11 +57,11 @@ function setCanvasGrid(number) {
 
 function paintSquare(e) {
          if (e.shiftKey) e.target.style.backgroundColor = colorInUse;
-    else if (e.altKey) e.target.style.backgroundColor = RainbowColor(e);
-    else if (e.ctrlKey) return;
+    else if (e.altKey) e.target.style.backgroundColor = rainbowColor();
+    else if (e.ctrlKey) e.target.style.backgroundColor = scalingColor(e);
 }
 
-function RainbowColor(e) {
+function rainbowColor() {
     switch (getRandomInt(7)) {
         case 0: return "red";
         case 1: return "orangered";
@@ -70,6 +71,16 @@ function RainbowColor(e) {
         case 5: return "indigo";
         case 6: return "fuchsia";
     }
+}
+
+function scalingColor(e) {
+    let actualColor = window.getComputedStyle(e.target).backgroundColor;
+    if (actualColor.substring(0,3) === "rgb") {
+        
+    }
+    
+
+
 }
 
 function selectColor(e) {
