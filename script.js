@@ -58,7 +58,6 @@ function setCanvasGrid(number) {
 function paintSquare(e) {
          if (e.shiftKey) e.target.style.backgroundColor = colorInUse;
     else if (e.altKey) e.target.style.backgroundColor = rainbowColor();
-    else if (e.ctrlKey) e.target.style.backgroundColor = scalingColor(e);
 }
 
 function rainbowColor() {
@@ -73,15 +72,7 @@ function rainbowColor() {
     }
 }
 
-function scalingColor(e) {
-    let actualColor = window.getComputedStyle(e.target).backgroundColor;
-    if (actualColor.substring(0,3) === "rgb") {
-        
-    }
-    
 
-
-}
 
 function selectColor(e) {
     colorInUse = window.getComputedStyle(e.target).backgroundColor;
